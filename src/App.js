@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 import { AppRoutes } from "./router/routes";
-import { Home, Login, Profile } from "./screen";
+import { Home, Login, Profile, View } from "./screen";
 
 
 const App = () => {
@@ -23,18 +23,23 @@ const App = () => {
           </Route> */}
 
           {/* Login Screen Route */}
-          <Route path={AppRoutes.login}>
+          <Route exact path={AppRoutes.login}>
             <Login />
           </Route>
 
           {/* Home Screen Route */}
-          <Route path={AppRoutes.home}>
+          <Route exact path={AppRoutes.home}>
             <Home />
           </Route>
 
           {/* Profile Screen Route */}
-          <Route path={AppRoutes.profile}>
+          <Route exact path={AppRoutes.profile}>
             <Profile />
+          </Route>
+
+          {/* View Screen Route */}
+          <Route exact path={AppRoutes.view}>
+            <View />
           </Route>
 
           {/* Another way of defining component for default route. */}
